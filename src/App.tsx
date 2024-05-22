@@ -29,7 +29,7 @@ function App() {
     <Authenticator>
       {({ signOut, user }) => (
         <main>
-          <h1>My todos</h1>
+          <h1>{user?.signInDetails?.loginId}'s todos</h1>
           <button onClick={createTodo}>+ new</button>
           <ul>
             {todos.map((todo) => (
@@ -46,7 +46,7 @@ function App() {
               Review next step of this tutorial.
             </a>
             <p>{user?.userId}</p>
-            <p>{user?.username}</p>
+            <p>{user?.signInDetails?.authFlowType}</p>
           </div>
           <button onClick={signOut}>Sign out</button>
         </main>
